@@ -24,8 +24,11 @@ html { }
 body {
 	font-size: 12pt;
 	color: #333;
-	background: black;
-	font-family: "Helvetica Neue", Helvetica Neue, Helvetica, Arial, sans-serif
+	font-family: "Helvetica Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
+	background: url('./images/stephane-thibault-famille-2012-1600.jpg') top left #111;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 /**
@@ -77,15 +80,14 @@ time {}
 
 #site-header-wrapper {
 	width: 100%;
-	padding: 10px 0;
-	background: #333;
-	border-top: 1px solid #6092c2;
-	border-bottom: 1px solid #6092c2;
+	padding: 50px 0;
+	background: transparent;
 }
 	
 	#site-header {
-		width: 800px;
+		max-width: 800px;
 		margin: 0 auto;
+		padding-right: 25px;
 	}
 
 #main-menu-wrapper {
@@ -109,8 +111,7 @@ time {}
 
 #content-wrapper {
 	width: 100%;
-	padding: 5px 0;
-	background: white;
+	padding: 750px 0 5px 0;
 }
 
 #content-area {
@@ -127,6 +128,8 @@ time {}
 	-webkit-box-shadow: #666 5px 5px 20px;
 	-moz-box-shadow: #666 5px 5px 20px;
 	-khtml-box-shadow: #666 5px 5px 20px;
+	background: white;
+	opacity: 0.95;
 }
 
 	#content {
@@ -909,9 +912,11 @@ nav#breadcrumbs { display: inline; padding-left: 5px; }
 }
 
 
-#site-header a { color: white; }
+#site-header a, #site-footer * { color: white; text-shadow: black 0.2em 0.2em 0.2em; }
+#site-header * { text-align: right; }
 #site-title { font-size: 24pt; }
-#tagline { font-size: 10pt; }
+#site-header p, #tagline { font-size: 10pt; }
+
 
 #archive-title,
 .article-header h1,
