@@ -31,8 +31,8 @@
 				$subheading_tag = ( is_home() || is_front_page() ) ? 'h2' : 'h3';
 				?>
 				<<?php echo $heading_tag; ?> id="site-title"><a href="<?php bloginfo( 'url' ); ?>" title="<?php bloginfo( 'name' ); ?> | <?php bloginfo( 'description' ); ?>"><?php bloginfo( 'name' ); ?></a></<?php echo $heading_tag; ?>>
-				<<?php echo $subheading_tag; ?> id="tagline"><a href="<?php bloginfo( 'url' ); ?>" title="<?php bloginfo( 'name' ); ?> | <?php bloginfo( 'description' ); ?>"><?php bloginfo( 'description' ); ?></a></<?php echo $subheading_tag; ?>>
-				<p><a href="https://twitter.com/_sthibault" title"Contacter @_sthibault sur Twitter">@_sthibault</a></p>
+				<<?php echo $subheading_tag; ?> id="tagline"><?php bloginfo( 'description' ); ?></<?php echo $subheading_tag; ?>>
+				<p><a href="https://twitter.com/_sthibault" title="Contacter @_sthibault sur Twitter">@_sthibault</a></p>
 			</hgroup>
 		</header><!-- END site-header -->
 	</div><!-- END site-header-wrapper -->

@@ -912,7 +912,7 @@ nav#breadcrumbs { display: inline; padding-left: 5px; }
 }
 
 
-#site-header a, #site-footer * { color: white; text-shadow: black 0.2em 0.2em 0.2em; }
+#site-header *, #site-footer * { color: white; text-shadow: black 0.2em 0.2em 0.2em; }
 #site-header * { text-align: right; }
 #site-title { font-size: 24pt; }
 #site-header p, #tagline { font-size: 10pt; }
