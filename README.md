@@ -3,7 +3,7 @@ Microblog
 
 WordPress theme primarily designed for publishing short notifications.
 
-Currently at the “ Refactoring my old skin ” stage.
+Currently at the “ Refactoring my old skin ” stage but we're getting there.
 
 
 Known Issues
@@ -17,7 +17,7 @@ TODO
 * Fix theme.js
 * Enable admin panel
 * Configure options
-
+* Comments callback function
 
 About the author
 -----------------

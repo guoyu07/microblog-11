@@ -111,7 +111,7 @@ time {}
 
 #content-wrapper {
 	width: 100%;
-	padding: 750px 0 5px 0;
+	padding: 425px 0 5px 0;
 }
 
 #content-area {
@@ -326,7 +326,7 @@ select { max-width: 300px; margin: .1em; }
 textarea {
 	border: 1px solid #ccc;
 	width: 300px;
-	height: 200px;
+	height: 100px;
 	padding: 10px;
 	text-align: left;
 	line-height: 1.4em;
@@ -500,8 +500,9 @@ pre {
 /**
  * WordPress Comments
  */
-#comments { font-size: smaller; margin: 0 20px 10px 10px; }
+#comments { margin: 0 20px 10px 10px; }
 
+/*
 .depth-1 { margin-bottom: 10px; padding: 10px; border: 1px solid #ccc; }
 .depth-2,
 .depth-3,
@@ -511,16 +512,20 @@ pre {
 .depth-3:last-child,
 .depth-4:last-child,
 .depth-4:last-child { margin-bottom: 0; }
+*/
 
-.comment { }
+.depth-1 { border-bottom: 1px solid #ccc; }
+.comment { margin: 10px 0; padding: 10px 0; }
 .commentmetadata {}
 .comment-meta { padding: 5px 0 10px 0; }
-.comment-author .avatar { float: left; margin: 0 10px 5px 0; padding: 5px; border: 1px solid #ccc; }
+.comment-author .avatar { float: left; margin: 0 10px 5px 0; padding: 0 5px 5px 0; }
+
+.comment-author, .comment-meta { font-size: smaller; }
 
 a.comment-edit-link {}
 a.url {}
 
-.reply { clear: both; padding-top: 5px; }
+.reply { clear: both; padding-top: 5px; text-align: right; font-size: smaller; }
 a.comment-reply-link {}
 a#cancel-comment-reply-link { font-size: small; vertical-align: top; }
 

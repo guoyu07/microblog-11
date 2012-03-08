@@ -2,11 +2,9 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
 	<title><?php display_meta_title( ); ?></title>
 	<meta description="<?php bloginfo( 'description' ); ?>" />
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-	<link rel="stylesheet" type="text/css" media="all and (max-width: 800px)" href="<?php bloginfo( 'template_directory' ); ?>/css/1024.css" />
-	<link rel="stylesheet" type="text/css" media="all and (min-width: 1600px)" href="<?php bloginfo( 'template_directory' ); ?>/css/full.css" />
 	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo( 'rss2_url' ); ?>" title="<?php bloginfo( 'name' ); ?> » Articles" />
 	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo( 'comments_rss2_url' ); ?>" title="<?php bloginfo( 'name' ); ?> » Comments" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -15,7 +13,17 @@
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-<?php wp_head(); ?>
+<!-- wp_head -->
+	<?php wp_head(); ?>
+<!-- END wp_head -->
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+	<link rel="stylesheet" type="text/css" media="all and (max-width: 800px)" href="<?php bloginfo( 'template_directory' ); ?>/css/1024.css" />
+	<link rel="stylesheet" type="text/css" media="all and (min-width: 1600px)" href="<?php bloginfo( 'template_directory' ); ?>/css/full.css" />
+	<?php if (!is_home()) : ?>
+	<style type="text/css" media="all">
+		#content-wrapper { padding-top: 0; }
+	</style>
+	<?php endif; ?>
 </head>
 <body <?php body_class(); ?>>
 	<div id="site-header-wrapper">

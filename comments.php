@@ -1,6 +1,5 @@
 <?php if ( comments_open() || have_comments() ): ?>
 <section id="comments">
-	<h2><?php _e( 'Comments' ); ?></h2>
 
 <?php if ( have_comments() ) : ?>
 
