@@ -13,6 +13,7 @@
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+	<script src="http://platform.twitter.com/anywhere.js?id=oPS6yMhrHmihMUXOhOfA&v=1" type="text/javascript"></script>
 <!-- wp_head -->
 	<?php wp_head(); ?>
 <!-- END wp_head -->
