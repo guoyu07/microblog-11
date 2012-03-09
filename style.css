@@ -1039,6 +1039,16 @@ body.login form#registerform a.legacy {
 }
 
 
+/**
+ * Social plugin (Crowd Favorite)
+ */
+#social { margin: 40px 20px 40px 10px; }
+#social #respond input.social-input { width: 340px; }
+#social #respond textarea.social-input { height: 100px; width: 340px; }
+#social input#submit { width: 350px; }
+
+p.subscribe-to-comments { margin-top: 20px !important; }
+
 }/** END @ media all */
 
 @media print {
