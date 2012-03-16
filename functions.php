@@ -688,4 +688,21 @@ function display_breadcrumbs() {
 	}
 }
 
+/**
+ * Display custom fields details gathered by
+ * the FeedWordPress plugin
+ */
+function display_delicious_syndication_meta() {
+	$post_id = get_the_ID();
+	$syndication_permalink = get_post_meta($post_id, 'syndication_permalink', true);
+	$syndication_source_uri = get_post_meta($post_id, 'syndication_source_uri', true);
+
+	if ($syndication_permalink == true && $syndication_source_uri == "http://www.delicious.com/sthibault" ) {
+		echo '<p><a href="http://www.delicious.com/sthibault" title="Stéphane Thibault | Delicious" rel="external">sthibault</a> bookmarked a link:' ."</p>\n";
+		
+		echo '<p class="syndication_permalink"><a href="'. $syndication_permalink .'" title="'. get_the_title() .'" rel="external">'. get_the_title() ."</a></p>\n";
+	}
+	
+}
+
 

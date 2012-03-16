@@ -11,6 +11,7 @@
 						</aside><!-- END article-meta -->
 						<section class="article-content">
 							<p class="smaller"><?php display_author(); ?></p>
+							<?php display_delicious_syndication_meta(); ?>
 							<?php the_content(); ?>
 						</section><!-- END article-content -->
 					</div><!-- END article-content-wrapper -->
