@@ -1049,6 +1049,8 @@ body.login form#registerform a.legacy {
 
 p.subscribe-to-comments { margin-top: 20px !important; }
 
+p.syndication_permalink a { word-wrap: break-word; }
+
 }/** END @ media all */
 
 @media print {
