@@ -392,9 +392,19 @@ function get_first_post_year( ) {
 	
 	global $wpdb;
 	
+	/**
+	 * @todo Fixme
+	 */
 	$post_datetimes = $wpdb->get_row(
-		$wpdb->prepare( "SELECT YEAR(min(post_date_gmt)) AS firstyear, YEAR(max(post_date_gmt)) AS lastyear FROM $wpdb->posts WHERE post_date_gmt > 1970" )
-		);
+		$wpdb->prepare(
+			"SELECT YEAR(min(post_date_gmt))
+			AS firstyear, YEAR(max(post_date_gmt)) AS lastyear
+			FROM $wpdb->posts
+			WHERE post_date_gmt > 1970",
+			null,
+			null
+		)
+	);
 
 	if ( $post_datetimes ) {
 		$firstpost_year = $post_datetimes->firstyear;
