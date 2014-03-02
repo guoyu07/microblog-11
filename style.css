@@ -976,9 +976,9 @@ p.comments-closed { padding-top: 10px; }
 /**
  * GitHub
  */
-.tag-github .commits ul { list-style: none; }
+.tag-github .commits ul { list-style: none; margin-left: 0; }
 .tag-github .commits ul li span:first-child { display: none; }
-.tag-github .details a[href^="https://github.com/sthibault"] { display: none; }
+.tag-github .details a[href^="https://github.com/sthibault"] img.gravatar { display: none; }
 .tag-github br, .tag-github .mega-octicon { display: none; }
 
 
@@ -1047,6 +1047,10 @@ body.login form#registerform a.legacy {
 	color: #FFF;
 }
 
+/**
+ * Share buttons
+ */
+div.sharedaddy .sd-content { float: left; }
 
 /**
  * Social plugin (Crowd Favorite)
