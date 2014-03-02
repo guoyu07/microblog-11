@@ -14,16 +14,13 @@ function initialize_template() {
 	
 	/**
 	 * Deregister the default jQuery for the front end
-	 * so it can be loaded directly from Goolgle
+	 * so it can be loaded directly from Google
 	 */
 	if ( !is_admin() ) {
 		wp_deregister_script('jquery');
+		// Includes jQuery 1.4.4 for compatibility issues until proper theme update
+		wp_enqueue_script('theme', 'http://media.xn--stphanethibault-cnb.com/js/theme.js');
 	}
-
-	/**
-	 * Add the theme's JavaScript
-	 */
-	wp_enqueue_script('theme', 'http://media.xn--stphanethibault-cnb.com/js/theme.js');
 
 	/**
 	 * Deregister the OpenID plugin script and style as they are included
