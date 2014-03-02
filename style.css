@@ -1060,6 +1060,11 @@ div.sharedaddy .sd-content { float: left; }
 #social #respond textarea.social-input { height: 100px; width: 340px; }
 #social input#submit { width: 350px; }
 
+#social #reply-title,
+#social .social-nav .social-current-tab { background: none; }
+#social #reply-title { display: none; }
+
+
 p.subscribe-to-comments { margin-top: 20px !important; }
 
 p.syndication_permalink a { word-wrap: break-word; }

@@ -13,13 +13,11 @@
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	<script src="http://platform.twitter.com/anywhere.js?id=oPS6yMhrHmihMUXOhOfA&v=1" type="text/javascript"></script>
+	<script src="http://platform.twitter.com/anywhere.js?id=oPS6yMhrHmihMUXOhOfA&amp;v=1" type="text/javascript"></script>
 <!-- wp_head -->
 	<?php wp_head(); ?>
 <!-- END wp_head -->
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-	<link rel="stylesheet" type="text/css" media="all and (max-width: 800px)" href="<?php bloginfo( 'template_directory' ); ?>/css/1024.css" />
-	<link rel="stylesheet" type="text/css" media="all and (min-width: 1600px)" href="<?php bloginfo( 'template_directory' ); ?>/css/full.css" />
 	<?php if (!is_home()) : ?>
 	<style type="text/css" media="all">
 		#content-wrapper { padding-top: 0; }

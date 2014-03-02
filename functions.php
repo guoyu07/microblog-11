@@ -1,7 +1,7 @@
 <?php
 
-add_action( 'init', 'initialize_template' );
-add_action( 'init', 'register_theme_sidebars' );
+add_action('init', 'initialize_template');
+add_action('init', 'register_theme_sidebars');
 
 /**
  * @since version 1.0.0
@@ -10,55 +10,55 @@ function initialize_template() {
 	/**
 	 * Remove the generator meta tag for enhanced security
 	 */
-	remove_action( 'wp_head', 'wp_generator' );
+	remove_action('wp_head', 'wp_generator');
 	
 	/**
 	 * Deregister the default jQuery for the front end
 	 * so it can be loaded directly from Goolgle
 	 */
 	if ( !is_admin() ) {
-		wp_deregister_script( 'jquery' );
+		wp_deregister_script('jquery');
 	}
 
 	/**
 	 * Add the theme's JavaScript
 	 */
-	wp_enqueue_script( 'theme', 'http://media.xn--stphanethibault-cnb.com/js/theme.js' );
+	wp_enqueue_script('theme', 'http://media.xn--stphanethibault-cnb.com/js/theme.js');
 
 	/**
 	 * Deregister the OpenID plugin script and style as they are included
 	 * in the theme's js and css file for better performance
 	 */
-	remove_action( 'wp', 'openid_js_setup', 9 );
-	remove_action( 'wp', 'openid_style');
+	remove_action('wp', 'openid_js_setup', 9 );
+	remove_action('wp', 'openid_style');
 
 	/**
 	 * Remove Really simple discovery link
 	 */
-	//remove_action( 'wp_head', 'rsd_link' );  /** Required by Delicious */
+	//remove_action('wp_head', 'rsd_link');  /** Required by Delicious */
 	
 	/**
 	 * Remove Windows Live Writer link
 	 */
-	remove_action( 'wp_head', 'wlwmanifest_link' );  
+	remove_action('wp_head', 'wlwmanifest_link');  
 
 	/**
 	 * Remove default style packaged with the Recent Comments widget
 	 */
 	global $wp_widget_factory;
-	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
+	remove_action('wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style') );
 
 	/**
 	 * Enable post thumbnails
 	 * @see http://codex.wordpress.org/Function_Reference/the_post_thumbnail
 	 */
-	add_theme_support( 'post-thumbnails' );
+	add_theme_support('post-thumbnails');
 	
 	/**
 	 * Enable the Main navigation menu
 	 * @see http://codex.wordpress.org/Function_Reference/register_nav_menu
 	 */
-	register_nav_menu( 'main-menu', __( 'Main menu' ) );
+	register_nav_menu('main-menu', __('Main menu') );
 
 
 }
@@ -66,7 +66,7 @@ function initialize_template() {
 /**
  * Include Admin Panel
  */
-//include( dirname(__FILE__) . '/admin/admin_panel.php' );
+//include( dirname(__FILE__) . '/admin/admin_panel.php');
 
 /**
  * @since version 1.0.0 
@@ -74,9 +74,9 @@ function initialize_template() {
 function register_theme_sidebars() {
 
 	register_sidebar( array(
-		'name' => __( 'Sidebar' ),
+		'name' => __('Sidebar'),
 		'id' => 'primary-widget-area',
-		'description' => __( 'Sidebar' ),
+		'description' => __('Sidebar'),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h4 class="widget-title">',
@@ -84,9 +84,9 @@ function register_theme_sidebars() {
 	) );
 	
 	register_sidebar( array(
-		'name' => __( 'Site Footer Column 1' ),
+		'name' => __('Site Footer Column 1'),
 		'id' => 'site-footer-col-1',
-		'description' => __( 'Site Footer Column 1' ),
+		'description' => __('Site Footer Column 1'),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h4 class="widget-title">',
@@ -94,9 +94,9 @@ function register_theme_sidebars() {
 	) );
 	
 	register_sidebar( array(
-		'name' => __( 'Site Footer Column 2' ),
+		'name' => __('Site Footer Column 2'),
 		'id' => 'site-footer-col-2',
-		'description' => __( 'Site Footer Column 2' ),
+		'description' => __('Site Footer Column 2'),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h4 class="widget-title">',
@@ -104,9 +104,9 @@ function register_theme_sidebars() {
 	) );
 	
 	register_sidebar( array(
-		'name' => __( 'Site Footer Column 3' ),
+		'name' => __('Site Footer Column 3'),
 		'id' => 'site-footer-col-3',
-		'description' => __( 'Site Footer Column 3' ),
+		'description' => __('Site Footer Column 3'),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h4 class="widget-title">',
@@ -114,9 +114,9 @@ function register_theme_sidebars() {
 	) );
 	
 	register_sidebar( array(
-		'name' => __( 'Site Footer Column 4' ),
+		'name' => __('Site Footer Column 4'),
 		'id' => 'site-footer-col-4',
-		'description' => __( 'Site Footer Column 4' ),
+		'description' => __('Site Footer Column 4'),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h4 class="widget-title">',
@@ -137,16 +137,16 @@ function display_meta_title( ) {
 	
 	global $page, $paged;
 
-	wp_title( '|', true, 'right' );
-	bloginfo( 'name' );
+	wp_title('|', true, 'right');
+	bloginfo('name');
 
-	$site_description = get_bloginfo( 'description', 'display' );
+	$site_description = get_bloginfo('description', 'display');
 	if ( $site_description && ( is_home() || is_front_page() ) ) {
 		echo ' | ' . $site_description;
 	}
 
 	if ( $paged >= 2 || $page >= 2 ) {
-		echo ' | ' . sprintf( __( 'Page %s' ), max( $paged, $page ) );
+		echo ' | ' . sprintf( __('Page %s'), max( $paged, $page ) );
 	}
 }
 
@@ -163,7 +163,7 @@ function display_post_title( ) {
 		echo '" title="';
 		the_title();
 		echo ' | ';
-		bloginfo( 'name' );	
+		bloginfo('name');	
 		echo '">';
 		the_title();
 		echo '</a></h1>';
@@ -175,7 +175,7 @@ function display_post_title( ) {
 		echo '" title="';
 		the_title();
 		echo ' | ';
-		bloginfo( 'name' );	
+		bloginfo('name');	
 		echo '">';
 		the_title();
 		echo '</a></h2>';
@@ -192,13 +192,13 @@ function display_permalink( $title ) {
 	echo '" title="';
 	the_title();
 	echo ' | ';
-	bloginfo( 'name' );	
+	bloginfo('name');	
 	echo '">';
 	
 	if ( $title == true ) {
 		the_title();
 	} else {
-		_e( 'Permalink' );
+		_e('Permalink');
 	}
 	echo '</a>';
 }
@@ -209,19 +209,13 @@ function display_permalink( $title ) {
  */
 function display_author() {
 
-	echo '<a href="';
-	bloginfo( 'url' );
-	echo '/author/'
-		. get_the_author_meta( 'nickname' );
-	echo '" title="'
-		. get_the_author_meta( 'nickname' )
-		. ' | ';
-	bloginfo( 'name' );
-	echo '">'
-	. get_the_author_meta( 'nickname' )
-	. '</a> ';
-
-	echo get_the_author_meta( 'display_name' );
+	echo '<a href="'
+	. get_the_author_meta('user_url')
+	. '" title="'
+	. get_the_author_meta('display_name')
+	. '">'
+	. get_the_author_meta('display_name')
+	. '</a>&nbsp;&gt;_ ';
 }
 
 
@@ -237,64 +231,64 @@ function display_scientific_reference() {
 	 */
 	echo '<a href="';
 	
-	$author_url = get_the_author_meta( 'user_url' );
+	$author_url = get_the_author_meta('user_url');
 	
 	if ( !empty( $author_url ) ) {
-		the_author_meta( 'user_url' );
+		the_author_meta('user_url');
 		echo '" title="'
-			. get_the_author_meta( 'display_name' );
+			. get_the_author_meta('display_name');
 	}
 	else {
-		bloginfo( 'url' );
+		bloginfo('url');
 		echo '/author/'
-			. get_the_author_meta( 'nickname' );
+			. get_the_author_meta('nickname');
 		echo '" title="'
-			. get_the_author_meta( 'display_name' )
+			. get_the_author_meta('display_name')
 			. ' | ';
-		bloginfo( 'name' );
+		bloginfo('name');
 	}
 	echo '">';
 	
-	$last_name = get_the_author_meta( 'last_name' );
-	$first_name = get_the_author_meta( 'first_name' );
+	$last_name = get_the_author_meta('last_name');
+	$first_name = get_the_author_meta('first_name');
 
 	if ( !empty( $last_name ) && !empty( $first_name ) ) {
 		echo '<span class="last-name">'
-			. get_the_author_meta( 'last_name' )
+			. get_the_author_meta('last_name')
 			. '</span>, <span class="first-name">'
-			. get_the_author_meta( 'first_name' )
+			. get_the_author_meta('first_name')
 			. '</span>';
 	}
 	else {
 		echo '<span class="display-name">'
-			. get_the_author_meta( 'display_name' )
+			. get_the_author_meta('display_name')
 			. '</span>';
 	}
 	echo '</a> ';
 	
 	echo '<time datetime="'
-		. get_the_date( 'Y' )
+		. get_the_date('Y')
 		. '">('
-		. get_the_date( 'Y' )
+		. get_the_date('Y')
 		. ')</time>. ';
 
 	/**
 	 * Article title
 	 */
-	_e( '“&nbsp;' );
+	_e('“&nbsp;');
 	echo '<a href="';
 	the_permalink();
 	echo '" title="';
 	the_title();
 	echo ' | ';
-	bloginfo( 'name' );
+	bloginfo('name');
 	echo '">';
 	the_title();
 	echo '</a>';
-	_e( '&nbsp;”' );
+	_e('&nbsp;”');
 	echo ', ';
 	
-	_e( 'online' );
+	_e('online');
 	echo ', ';
 
 	/**
@@ -305,7 +299,7 @@ function display_scientific_reference() {
 	echo '" title="';
 	the_title();
 	echo ' | ';
-	bloginfo( 'name' );
+	bloginfo('name');
 	echo '">';
 	the_permalink();
 	echo '</a>&gt;, ';
@@ -314,39 +308,39 @@ function display_scientific_reference() {
 	 * Site name
 	 */
 	echo '<i><a href="';
-	bloginfo( 'url' );
+	bloginfo('url');
 	echo '" title="';
-	bloginfo( 'name' );
+	bloginfo('name');
 	echo ' | ';
-	bloginfo( 'description' );
+	bloginfo('description');
 	echo '">';
-	bloginfo( 'name' );
+	bloginfo('name');
 	echo '</a></i>, ';
 
 	/**
 	 * Publication date
 	 */
-	_e( 'published on' );
+	_e('published on');
 	echo ' '
 		. '<time datetime="'
-		. get_the_time( get_option( 'date_format' ) )
+		. get_the_time( get_option('date_format') )
 		. ', '
-		. get_the_time( get_option( 'time_format' ) )
+		. get_the_time( get_option('time_format') )
 		. '" pubdate>';
 		
 	if ( is_page() ) {
-		the_date( 'Y-m-d' );
+		the_date('Y-m-d');
 	}
 	else {
 		echo '<a href="'
-			. get_day_link( get_the_date( 'Y' ), get_the_date( 'm' ), get_the_date( 'd' ))
+			. get_day_link( get_the_date('Y'), get_the_date('m'), get_the_date('d'))
 			. '" title="'
-			.  __( 'Articles posted on ' )
-			. get_the_time( get_option( 'date_format' ) )
+			.  __('Articles posted on ')
+			. get_the_time( get_option('date_format') )
 			. ' | ';
-		bloginfo( 'name' );
+		bloginfo('name');
 		echo	'">'
-			. get_the_date( 'Y-m-d' )
+			. get_the_date('Y-m-d')
 			. '</a>';
 	}
 	echo '</time>, ';
@@ -354,29 +348,29 @@ function display_scientific_reference() {
 	/**
 	 * Modification date
 	 */
-	 $pub_date = get_the_date( 'Y-m-d' );
-	 $mod_date = get_the_modified_date( 'Y-m-d' );
+	 $pub_date = get_the_date('Y-m-d');
+	 $mod_date = get_the_modified_date('Y-m-d');
 	 
 	 if ( $pub_date != $mod_date ) {
-		_e( 'last modified on' );
+		_e('last modified on');
 		echo ' <time datetime="'
-			. get_the_modified_date( 'Y-m-d' )
+			. get_the_modified_date('Y-m-d')
 			. '">'
-			. get_the_modified_date( 'Y-m-d' )
+			. get_the_modified_date('Y-m-d')
 			. '</time>, ';
 	 }
 
 	/**
 	 * Access date
 	 */
-	_e( 'accessed on' );
+	_e('accessed on');
 	echo ' <time datetime="'
-		. date( 'Y-m-d' )
+		. date('Y-m-d')
 		. '">'
-		. date( 'Y-m-d' )
+		. date('Y-m-d')
 		. '</time>';
 	
-	if ( !is_page() ) { echo ', '; comments_popup_link( 'no comments', '1 Comment', '% Comments' ); }
+	if ( !is_page() ) { echo ', '; comments_popup_link('no comments', '1 Comment', '% Comments'); }
 	
 	echo '.</div><!-- END of scientific reference -->';
 	
@@ -426,7 +420,7 @@ function display_first_post_year( ) {
 function display_copyright_date_span( ) {
 	
 	$first_year = get_first_post_year();
-	$current_year = date( 'Y' );
+	$current_year = date('Y');
 
 	if ( $first_year != $current_year ) {
 		echo $first_year . '-' . $current_year;
@@ -439,16 +433,16 @@ function display_copyright_date_span( ) {
  */
 function display_site_rss_button() {
 	echo '<a href="';
-	bloginfo( 'rss2_url' );
+	bloginfo('rss2_url');
 	echo '" title="';
 	_e( "Subscribe to this website's RSS feed" );
 	echo ' | ';
-	bloginfo( 'name' );
+	bloginfo('name');
 	echo '">'
 		. '<img src="'
 		. 'http://media.xn--stphanethibault-cnb.com/images/rss_icon_glass12.png"'
 		. ' alt="'
-		. __( 'RSS feed icon' )
+		. __('RSS feed icon')
 		. '" class="rss12px" /></a>';
 }
 
@@ -460,15 +454,15 @@ function display_post_comments_rss_button() {
 	echo '<a href="';
 	the_permalink();
 	echo 'feed/" title="';
-	_e( 'Comments on&nbsp;: ' );
+	_e('Comments on&nbsp;: ');
 	the_title();
 	echo ' | ';
-	bloginfo( 'name' );
+	bloginfo('name');
 	echo '">'
 		. '<img src="'
 		. 'http://media.xn--stphanethibault-cnb.com/images/rss_icon_glass12.png"'
 		. ' alt="'
-		. __( 'RSS feed icon' )
+		. __('RSS feed icon')
 		. '" class="rss12px" /></a>';
 }
 
@@ -503,7 +497,7 @@ function display_subpages() {
 		.'" title="'
 		. $root_ancestor->post_title
 		. ' | ';
-		bloginfo( 'name' );
+		bloginfo('name');
 		echo '">'
 		. $root_ancestor->post_title
 		. '</a>'
@@ -527,14 +521,14 @@ function display_pagination_nav( ) {
 	$wp_query->query_vars[ 'paged' ] > 1 ? $current = $wp_query->query_vars[ 'paged' ] : $current = 1;
 	
 	$pagination = array(
-		'base'			=> @add_query_arg( 'page','%#%' ),
+		'base'			=> @add_query_arg('page','%#%'),
 		'format'			=> '',
 		'total'			=> $wp_query->max_num_pages,
 		'current'		=> $current,
 		'show_all'		=> false,
 		'prev_next'	=> true,
-		'prev_text'		=> __( '&lt;&nbsp;Previous page' ),
-		'next_text'		=> __( 'Next page&nbsp;&gt;' ),
+		'prev_text'		=> __('&lt;&nbsp;Previous page'),
+		'next_text'		=> __('Next page&nbsp;&gt;'),
 		'end_size'		=> 1,
 		'mid_size'		=> 2,
 		'type'			=> 'plain',
@@ -543,11 +537,11 @@ function display_pagination_nav( ) {
 	);
 	
 	if ( $wp_rewrite->using_permalinks() )
-		$pagination[ 'base' ] = user_trailingslashit( trailingslashit( remove_query_arg( 's', get_pagenum_link(1) ) )
-			. 'page/%#%/', 'paged' );
+		$pagination[ 'base' ] = user_trailingslashit( trailingslashit( remove_query_arg('s', get_pagenum_link(1) ) )
+			. 'page/%#%/', 'paged');
 	
 	if ( !empty( $wp_query->query_vars[ 's' ] ) )
-		$pagination[ 'add_args' ] = array( 's' => get_query_var( 's' ) );
+		$pagination[ 'add_args' ] = array('s' => get_query_var('s') );
 	
 	echo '<nav id="pagination">' . paginate_links( $pagination ) . "</nav>\n";
 		
@@ -560,7 +554,7 @@ function display_pagination_nav( ) {
 function display_breadcrumbs() {
 	
 	$delimiter = '&gt;';
-	$name = __( 'Home' ); /** Text for the Home link */
+	$name = __('Home'); /** Text for the Home link */
 	$currentBefore = '<span class="current">';
 	$currentAfter = '</span>';
  
@@ -569,7 +563,7 @@ function display_breadcrumbs() {
 		echo '<nav id="breadcrumbs">';
 		
 		global $post;
-		$home = get_bloginfo( 'url' );
+		$home = get_bloginfo('url');
 		echo '<a href="' . $home . '">' . $name . '</a> ' . $delimiter . ' ';
 		
 		if ( is_category() ) {
@@ -578,32 +572,32 @@ function display_breadcrumbs() {
 			$thisCat = $cat_obj->term_id;
 			$thisCat = get_category( $thisCat );
 			$parentCat = get_category( $thisCat->parent );
-			if ( $thisCat->parent != 0 ) echo( get_category_parents( $parentCat, true, ' ' . $delimiter . ' ' ) );
+			if ( $thisCat->parent != 0 ) echo( get_category_parents( $parentCat, true, ' ' . $delimiter . ' ') );
 
 			echo $currentBefore;
-			single_cat_title( '', true );
+			single_cat_title('', true );
 			echo $currentAfter;
 		}
 		
 		elseif ( is_day() ) {
-			echo '<a href="' . get_year_link( get_the_time( 'Y' ) ) . '">' . get_the_time( 'Y' ) . '</a> ' . $delimiter . ' ';
-			echo '<a href="' . get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) . '">' . get_the_time( 'F' ) . '</a> ' . $delimiter . ' ';
-			echo $currentBefore . get_the_time( 'd' ) . $currentAfter;
+			echo '<a href="' . get_year_link( get_the_time('Y') ) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
+			echo '<a href="' . get_month_link( get_the_time('Y'), get_the_time('m') ) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
+			echo $currentBefore . get_the_time('d') . $currentAfter;
 		}
 		
 		elseif ( is_month() ) {
-			echo '<a href="' . get_year_link( get_the_time( 'Y' ) ) . '">' . get_the_time( 'Y' ) . '</a> ' . $delimiter . ' ';
-			echo $currentBefore . get_the_time( 'F' ) . $currentAfter;
+			echo '<a href="' . get_year_link( get_the_time('Y') ) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
+			echo $currentBefore . get_the_time('F') . $currentAfter;
 		}
 		
 		elseif ( is_year() ) {
-			echo $currentBefore . get_the_time( 'Y' ) . $currentAfter;
+			echo $currentBefore . get_the_time('Y') . $currentAfter;
 		}
 		
 		elseif ( is_single() && !is_attachment() ) {
 			$cat = get_the_category();
 			$cat = $cat[0];
-			echo get_category_parents( $cat, true, ' ' . $delimiter . ' ' );
+			echo get_category_parents( $cat, true, ' ' . $delimiter . ' ');
 			echo $currentBefore;
 			the_title();
 			echo $currentAfter;
@@ -613,7 +607,7 @@ function display_breadcrumbs() {
 			$parent = get_post( $post->post_parent );
 			$cat = get_the_category( $parent->ID );
 			$cat = $cat[0];
-			echo get_category_parents( $cat, true, ' ' . $delimiter . ' ' );
+			echo get_category_parents( $cat, true, ' ' . $delimiter . ' ');
 			echo '<a href="' . get_permalink( $parent ) . '">' . $parent->post_title . '</a> ' . $delimiter . ' ';
 			echo $currentBefore;
 			the_title();
@@ -645,21 +639,21 @@ function display_breadcrumbs() {
 		
 		elseif ( is_search() ) {
 			echo $currentBefore
-			. __( 'Search results for' )
+			. __('Search results for')
 			. ' '
-			. __( '“&nbsp;' )
+			. __('“&nbsp;')
 			. get_search_query()
-			. __( '&nbsp;”' )
+			. __('&nbsp;”')
 			. $currentAfter;
 		}
 		
 		elseif ( is_tag() ) {
 			echo $currentBefore
-			. __( 'Archives for the tag' )
+			. __('Archives for the tag')
 			. ' '
-			. __( '“&nbsp;' );
-			single_cat_title( '', true );
-			echo __( '&nbsp;”' )
+			. __('“&nbsp;');
+			single_cat_title('', true );
+			echo __('&nbsp;”')
 			. $currentAfter;
 		}
 		
@@ -673,16 +667,16 @@ function display_breadcrumbs() {
 		
 		elseif ( is_404() ) {
 			echo $currentBefore
-			. __( '404 Not found' )
+			. __('404 Not found')
 			. $currentAfter;
 		}
 		
-		if ( get_query_var( 'paged' ) ) {
-			echo ' ( '
-			. __( 'Page' )
+		if ( get_query_var('paged') ) {
+			echo ' ('
+			. __('Page')
 			. ' '
-			. get_query_var( 'paged' )
-			. ' )';
+			. get_query_var('paged')
+			. ')';
 		}
 		
 		echo "</nav>\n";
@@ -692,7 +686,7 @@ function display_breadcrumbs() {
 	else {
 ?>  	
 <nav id="breadcrumbs">
-	<span class="current"><?php _e( 'Home' ); ?></span>
+	<span class="current"><?php _e('Home'); ?></span>
 </nav>
 <?php  	
 	}
