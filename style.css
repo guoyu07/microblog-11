@@ -976,8 +976,11 @@ p.comments-closed { padding-top: 10px; }
 /**
  * GitHub
  */
-.commits ul { list-style: none; }
-.commits ul li span:first-child { display: none; }
+.tag-github .commits ul { list-style: none; }
+.tag-github .commits ul li span:first-child { display: none; }
+.tag-github .details a[href^="https://github.com/sthibault"] { display: none; }
+.tag-github br, .tag-github .mega-octicon { display: none; }
+
 
 /**
  * Profiles
