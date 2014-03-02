@@ -974,6 +974,12 @@ p.comments-closed { padding-top: 10px; }
 }
 
 /**
+ * GitHub
+ */
+.commits ul { list-style: none; }
+.commits ul li span:first-child { display: none; }
+
+/**
  * Profiles
  */
 #linkcat-700 ul { list-style: none; list-style-position: inside; }
